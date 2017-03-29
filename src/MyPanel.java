@@ -15,7 +15,7 @@ public class MyPanel extends JPanel {
 	final int bombColums = 9;
 	final int bombRows = 9;
 	final int totalBombs = 10;
-	public int selectedSquares = 0 ;  //Counts the gray squares
+	public int selectedSquares = (totalColums * totalRows) - totalBombs;  //Counts the gray squares
 	private boolean endGame = false;
 
 	private boolean[][] Blank = new boolean[bombColums][bombRows];
@@ -205,7 +205,7 @@ public class MyPanel extends JPanel {
 
 			}
 		}
-		if (counter == 71){
+		if (counter == selectedSquares){
 			win = true;
 		}
 		else{
